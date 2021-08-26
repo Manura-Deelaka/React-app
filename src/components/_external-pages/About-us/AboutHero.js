@@ -1,17 +1,6 @@
 // material
 import { alpha, useTheme, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
-import {
-  Box,
-  Grid,
-  Button,
-  Container,
-  Typography,
-  useMediaQuery,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia
-} from '@material-ui/core';
+import { Box, Grid, Button, Container, Typography, useMediaQuery, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
 
 // ----------------------------------------------------------------------
 
@@ -21,20 +10,20 @@ const RootStyle = styled('div')(({ theme }) => ({
   paddingBottom: theme.spacing(5),
   [theme.breakpoints.up('md')]: {
     textAlign: 'left',
-    paddingBottom: theme.spacing(1)
-  }
+    paddingBottom: theme.spacing(1),
+  },
 }));
 const useStyles = makeStyles({
   media: {
     height: '65px',
     width: '90px',
-    marginLeft: '25px'
+    marginLeft: '25px',
   },
   media1: {
     height: '70px',
     width: '70px',
-    marginLeft: '25px'
-  }
+    marginLeft: '25px',
+  },
 });
 
 // ----------------------------------------------------------------------
@@ -49,25 +38,13 @@ export default function AboutWhat() {
   return (
     <>
       <Container id="about" sx={{ mt: 10 }}>
-        <Typography
-          sx={{ mt: { xs: 3, md: 5 }, mb: { xs: 3, md: 3 } }}
-          variant={isMobile ? 'h5' : 'h3'}
-          align="center"
-          color="textPrimary"
-          gutterBottom
-        >
-          라이크오토는 고객의 소중한 추억을 위해 최선을 다하고자 합니다. <br />
-          기술력의 노하우, 최고의 서비스, 고객에 대한 진정한 열정을 가지고 항상 노력하겠습니다.
+        <Typography sx={{ mt: { xs: 3, md: 5 }, mb: { xs: 3, md: 3 } }} variant={isMobile ? 'h5' : 'h3'} align="center" color="textPrimary" gutterBottom>
+          software, and hardware. <br />
+          software, and hardware
         </Typography>
         <br />
-        <Typography
-          sx={{ mt: { xs: 3 }, mb: { xs: 3, md: 10 } }}
-          variant={isMobile ? 'h3' : 'h3'}
-          color="textPrimary"
-          align="center"
-          gutterBottom
-        >
-          라이크오토는 아래와 같은 세가지 강점을 가지고 있습니다.
+        <Typography sx={{ mt: { xs: 3 }, mb: { xs: 3, md: 10 } }} variant={isMobile ? 'h3' : 'h3'} color="textPrimary" align="center" gutterBottom>
+          software, and hardware
         </Typography>
         <Box>
           <Grid container spacing={2}>
@@ -76,12 +53,12 @@ export default function AboutWhat() {
               <br />
               <CardContent>
                 <Typography gutterBottom variant="h4" component="h2" align="left">
-                  유럽형 차량 판매
+                  software, and hardware
                 </Typography>
                 <br />
                 <Typography variant="body1" color="textSecondary" component="p">
-                  라이크오토는 바인스버크 등 유럽의 메이저 캠핑카 업체로 부터 독점적인 판매권을 받아 한국에 최고 수준의
-                  유럽형 차량을 편리하게 판매하고 있습니다.
+                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
+                  advertising technologies, a search engine, cloud computing,
                 </Typography>
               </CardContent>
             </Grid>
@@ -90,12 +67,12 @@ export default function AboutWhat() {
               <br />
               <CardContent>
                 <Typography gutterBottom variant="h4" component="h2" align="left">
-                  라이크오토만의 특별한
+                  software, and hardware
                 </Typography>
                 <br />
                 <Typography variant="body1" color="textSecondary" component="p">
-                  차량의 판매부터 정비 서비스에 이르기 까지 캐러반과 모터홈에 대한 모든 시스템을 갖추고 있는
-                  라이크오토는 항상 고객을 위하여 최선을 다하고 있습니다.
+                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
+                  advertising technologies, a search engine, cloud computing,
                 </Typography>
               </CardContent>
             </Grid>
@@ -108,8 +85,8 @@ export default function AboutWhat() {
                 </Typography>
                 <br />
                 <Typography variant="body1" color="textSecondary" component="p">
-                  라이크오토를 통해 판매된 모든 차량은 라이크오토나 서비스 네트워크를 통해 보증기간동안 정비와 서비스가
-                  가능하며 언제든지 연락후 방문 해 주시기 바랍니다.
+                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
+                  advertising technologies, a search engine, cloud computing,
                 </Typography>
               </CardContent>
             </Grid>
