@@ -2,18 +2,18 @@
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 // components
 import Page from '../components/Page';
-import { AboutHero } from '../components/_external-pages/About-us/index';
+import { AboutHero, AboutMiddle } from '../components/_external-pages/About-us/index';
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Page)({
-  height: '100%'
+  height: '100%',
 });
 
 const ContentStyle = styled('div')(({ theme }) => ({
   overflow: 'hidden',
   position: 'relative',
-  backgroundColor: theme.palette.background.default
+  backgroundColor: theme.palette.background.default,
 }));
 
 // ----------------------------------------------------------------------
@@ -23,6 +23,7 @@ export default function LandingPage() {
     <RootStyle title="The starting point for your next project | Minimal-UI" id="move_top">
       <ContentStyle>
         <AboutHero />
+        <AboutMiddle />
       </ContentStyle>
     </RootStyle>
   );

@@ -1,10 +1,9 @@
 // material
-import { alpha, useTheme, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
-import { Box, Grid, Button, Container, Typography, useMediaQuery, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
+import { makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
+import { Box, Grid, Container } from '@material-ui/core';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import ImageListItemBar from '@material-ui/core/ImageListItemBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import itemData from './ItemData';
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 // ----------------------------------------------------------------------
 
-export default function AboutWhat() {
+export default function AboutHero() {
   const classes = useStyles();
 
   return (
