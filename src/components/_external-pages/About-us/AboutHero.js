@@ -47,18 +47,7 @@ export default function AboutWhat() {
         <Box>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6} md={6}>
-              <CardMedia className={classes.media} image="/static/about/Vector.svg" />
-              <br />
-              <CardContent>
-                <Typography gutterBottom variant="h4" component="h2" align="left">
-                  software, and hardware
-                </Typography>
-                <br />
-                <Typography variant="body1" color="textSecondary" component="p">
-                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
-                  advertising technologies, a search engine, cloud computing,
-                </Typography>
-              </CardContent>
+              
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
               <div className={classes.root}>
