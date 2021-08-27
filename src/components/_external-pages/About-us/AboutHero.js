@@ -1,6 +1,13 @@
 // material
 import { alpha, useTheme, makeStyles, experimentalStyled as styled } from '@material-ui/core/styles';
 import { Box, Grid, Button, Container, Typography, useMediaQuery, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
+import ImageListItemBar from '@material-ui/core/ImageListItemBar';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import IconButton from '@material-ui/core/IconButton';
+import InfoIcon from '@material-ui/icons/Info';
+import itemData from './ItemData';
 
 // ----------------------------------------------------------------------
 
@@ -13,42 +20,33 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingBottom: theme.spacing(1),
   },
 }));
-const useStyles = makeStyles({
-  media: {
-    height: '65px',
-    width: '90px',
-    marginLeft: '25px',
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
   },
-  media1: {
-    height: '70px',
-    width: '70px',
-    marginLeft: '25px',
+  imageList: {
+    width: 500,
+    height: 450,
   },
-});
-
+  icon: {
+    color: 'rgba(255, 255, 255, 0.54)',
+  },
+}));
 // ----------------------------------------------------------------------
 
 export default function AboutWhat() {
-  const theme = useTheme();
   const classes = useStyles();
-  const isLight = theme.palette.mode === 'light';
-  const shadow = `-40px 40px 80px ${alpha(isLight ? theme.palette.grey[500] : theme.palette.common.black, 0.48)}`;
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <>
       <Container id="about" sx={{ mt: 10 }}>
-        <Typography sx={{ mt: { xs: 3, md: 5 }, mb: { xs: 3, md: 3 } }} variant={isMobile ? 'h5' : 'h3'} align="center" color="textPrimary" gutterBottom>
-          software, and hardware. <br />
-          software, and hardware
-        </Typography>
-        <br />
-        <Typography sx={{ mt: { xs: 3 }, mb: { xs: 3, md: 10 } }} variant={isMobile ? 'h3' : 'h3'} color="textPrimary" align="center" gutterBottom>
-          software, and hardware
-        </Typography>
         <Box>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={4} md={4}>
+            <Grid item xs={12} sm={6} md={6}>
               <CardMedia className={classes.media} image="/static/about/Vector.svg" />
               <br />
               <CardContent>
@@ -62,33 +60,25 @@ export default function AboutWhat() {
                 </Typography>
               </CardContent>
             </Grid>
-            <Grid item xs={12} sm={4} md={4}>
-              <CardMedia className={classes.media1} image="/static/about/Vector1.svg" />
-              <br />
-              <CardContent>
-                <Typography gutterBottom variant="h4" component="h2" align="left">
-                  software, and hardware
-                </Typography>
-                <br />
-                <Typography variant="body1" color="textSecondary" component="p">
-                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
-                  advertising technologies, a search engine, cloud computing,
-                </Typography>
-              </CardContent>
-            </Grid>
-            <Grid item xs={12} sm={4} md={4}>
-              <CardMedia className={classes.media1} image="/static/about/Vector2.svg" />
-              <br />
-              <CardContent>
-                <Typography gutterBottom variant="h4" component="h2" align="left">
-                  차량 유지보수의 모든것
-                </Typography>
-                <br />
-                <Typography variant="body1" color="textSecondary" component="p">
-                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
-                  advertising technologies, a search engine, cloud computing,
-                </Typography>
-              </CardContent>
+            <Grid item xs={12} sm={6} md={6}>
+              <div className={classes.root}>
+                <ImageList rowHeight={180} className={classes.imageList}>
+                  {itemData.map((item, index) => (
+                    <ImageListItem key={item.img}>
+                      <img src={item.img} alt={index} />
+                      <ImageListItemBar
+                        title={item.title}
+                        subtitle={<span>by: {item.author}</span>}
+                        actionIcon={
+                          <IconButton aria-label={`info about ${item.title}`} className={classes.icon}>
+                            <InfoIcon />
+                          </IconButton>
+                        }
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </div>
             </Grid>
           </Grid>
         </Box>
