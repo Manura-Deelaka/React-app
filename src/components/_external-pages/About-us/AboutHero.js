@@ -55,7 +55,7 @@ export default function AboutWhat() {
                       <img src={item.img} alt={item.title} />
                       <ImageListItemBar
                         title={item.title}
-                        position="top"
+                        position="bottom"
                         actionIcon={<IconButton aria-label={`star ${item.title}`} className={classes.icon}></IconButton>}
                         actionPosition="left"
                         className={classes.titleBar}
