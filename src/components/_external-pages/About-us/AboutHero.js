@@ -8,6 +8,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import itemData from './ItemData';
+import itemDatas from './ItemDatas';
 
 // ----------------------------------------------------------------------
 
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   imageList: {
-    width: 500,
+    width: '98%',
     height: 450,
   },
   icon: {
@@ -45,20 +46,24 @@ export default function AboutWhat() {
     <>
       <Container id="about" sx={{ mt: 10 }}>
         <Box>
-          <Grid container spacing={2}>
+          <Grid container>
             <Grid item xs={12} sm={6} md={6}>
-              <CardMedia className={classes.media} image="/static/about/Vector.svg" />
-              <br />
-              <CardContent>
-                <Typography gutterBottom variant="h4" component="h2" align="left">
-                  software, and hardware
-                </Typography>
-                <br />
-                <Typography variant="body1" color="textSecondary" component="p">
-                  Google LLC is an American multinational technology company that specializes in Internet-related services and products, which include online
-                  advertising technologies, a search engine, cloud computing,
-                </Typography>
-              </CardContent>
+              <div className={classes.root}>
+                <ImageList width="100%" className={classes.imageList}>
+                  {itemDatas.map((item) => (
+                    <ImageListItem key={item.img} cols={item.featured ? 2 : 1}>
+                      <img src={item.img} alt={item.title} />
+                      <ImageListItemBar
+                        title={item.title}
+                        position="top"
+                        actionIcon={<IconButton aria-label={`star ${item.title}`} className={classes.icon}></IconButton>}
+                        actionPosition="left"
+                        className={classes.titleBar}
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </div>
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
               <div className={classes.root}>
